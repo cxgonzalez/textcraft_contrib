@@ -4,8 +4,11 @@ textcraft.py
 A lightweight python module for text transformation, cleaning and analysis
 
 """
-
-__version__ = "0.1.4"
+from importlib.metadata import version, PackageNotFoundError
+try:
+    __version__ = version("textcraft-py")
+except PackageNotFoundError:
+    __version__ = "0.0.0-dev"
 
 import re
 import string
